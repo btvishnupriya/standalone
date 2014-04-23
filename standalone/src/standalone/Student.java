@@ -1,7 +1,7 @@
 package standalone;
 
 import java.util.Scanner;
-import standalone1.Student_detail;
+import standalone1.StudentDetail;
 
 
 public class Student  {
@@ -18,7 +18,7 @@ public class Student  {
 		det.getDetails();
 		
 		//using instance of
-		System.out.println("check instanceof :" + (det instanceof Viewdetails));	
+		System.out.println("check instanceof :" + (det instanceof ViewDetails));	
 		}
 	}
 // using interface
@@ -30,13 +30,13 @@ public void getDetails();
 }
 
 //using abstract class which implements interface
-abstract class Viewdetails implements Details{
+abstract class ViewDetails implements Details{
 	protected int total;
 	protected int avg;
-	static Student_detail std=new Student_detail();
+	static StudentDetail std=new StudentDetail();
 	abstract void learn();//abstract method
 	
-	Viewdetails()//using constructor in abstract class
+	ViewDetails()//using constructor in abstract class
 	{
 		System.out.println("lets see what is happening/n here we use constuctor");
 	}
@@ -50,9 +50,9 @@ abstract class Viewdetails implements Details{
 	public final void setDetails()//use of final method
 	{
 		
-		std. setstudentName(Student_detail.studentName);
-		std.setstudentParentName(Student_detail.studentParentName);
-		std.setphoneNum(Student_detail.phoneNum);
+		std. setstudentName(StudentDetail.studentName);
+		std.setstudentParentName(StudentDetail.studentParentName);
+		std.setphoneNum(StudentDetail.phoneNum);
 	}
 	
 	
@@ -68,7 +68,7 @@ abstract class Viewdetails implements Details{
 }
 
 
-class Information extends  Viewdetails  {
+class Information extends  ViewDetails  {
 	
 	protected int total;
 	protected int avg;
@@ -78,14 +78,14 @@ class Information extends  Viewdetails  {
 	
 	System.out.println("enter the student name");
 	Scanner sc=new Scanner(System.in);
-	Student_detail.studentName=sc.next();
+	StudentDetail.studentName=sc.next();
  
 
 	System.out.println("enter the student studentparentname");
-	Student_detail.studentParentName=sc.next();
+	StudentDetail.studentParentName=sc.next();
 
 	System.out.println("enter the student phonenum");
-	Student_detail.phoneNum=sc.nextInt();
+	StudentDetail.phoneNum=sc.nextInt();
 	
 	
 }
